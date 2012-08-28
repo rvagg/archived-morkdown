@@ -1,0 +1,25 @@
+{
+    "name": "morkdown"
+  , "version": "0.0.0"
+  , "description": "A markdown editor build on Appjs & Node"
+  , "main": "lib/main.js"
+  , "dependencies": {
+        "appjs": "~0.0.19"
+      , "marked": "~0.2.5"
+      , "async": "~0.1.22"
+    }
+  , "scripts": {
+    }
+  , "bin": {
+        "morkdown": "./bin/morkdown"
+    }
+  , "repository": {
+        "type": "git"
+      , "url": "git://github.com/rvagg/appjs-morkdown.git"
+    }
+  , "preferGlobal": true
+  , "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+    ]
+  , "license": "MIT"
+}

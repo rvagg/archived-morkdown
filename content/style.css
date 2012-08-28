@@ -1,0 +1,40 @@
+body {
+  background: #eee;
+}
+#src, #dst {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  left: 0.5em;
+  bottom: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #cacaca;
+  background: white;
+}
+
+#src {
+  right: 50%;
+  margin-right: 0.25em;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 19px;
+}
+#dst {
+  left: 50%;
+  margin-left: 0.25em;
+  overflow: auto;
+}
+/*
+#src:before, #dst:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border: 1px solid #CACACA;
+}
+*/

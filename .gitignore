@@ -1,0 +1,5 @@
+node_modules/
+.hg/
+.hgignore
+.hgtags
+pygments/tests/
