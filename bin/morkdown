@@ -1,6 +1,9 @@
 #!/usr/bin/env node
-console.log(require('path').join(__dirname, '../lib/main.js'))
-var cp = require('child_process').spawn('node', [ '--harmony', require('path').join(__dirname, '../lib/main.js') ])
+var cp = require('child_process').spawn(
+    'node'
+  , [ '--harmony', require('path').join(__dirname, '../lib/main.js') ].concat(process.argv.slice(2))
+)
+
 cp.stdout.on('data', function (data) { process.stdout.write(data.toString()) })
 cp.stderr.on('data', function (data) { process.stderr.write(data.toString()) })
 cp.on('exit', process.exit)

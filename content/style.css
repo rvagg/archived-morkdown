@@ -16,7 +16,6 @@ body {
   border: 1px solid #cacaca;
   background: white;
 }
-
 #src {
   right: 50%;
   margin-right: 0.25em;
@@ -31,4 +30,11 @@ body {
   left: 50%;
   margin-left: 0.25em;
   overflow-y: auto;
+}
+body.watching #src {
+  display: none;
+}
+body.watching #dst {
+  margin-left: 0;
+  left: 0.5em;
 }
