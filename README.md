@@ -9,13 +9,14 @@ Morkdown is built on [AppJS](http://appjs.org/), an application framework for No
 
 ## Edit mode
 
-If you run **`morkdown`** without any arguments you'll enter a simple *edit mode*. You'll have a panel on the left where you can type (or paste) your Markdown and it'll be rendered in a panel on the right. There is no file-load or save functionality here so copy and paste are your friends.
+If you run `morkdown` without any arguments you'll enter a simple *edit mode*. You'll have a panel on the left where you can type (or paste) your Markdown and it'll be rendered in a panel on the right. There is no file-load or save functionality here so copy and paste are your friends.
 
 ## Watch mode
 
-If you run **`morkdown --watch <file>`** (also `-w <file>`) you'll ender a *watch mode* where Morkdown acts as a renderer for the Markdown file you've provided. It'll continue to watch for changes to that file and re-render the content automatically. That way, you can use your favourite editor instead of the lame in-built textarea!
+If you run `morkdown --watch <file>` (also `-w <file>`) you'll enter a *watch mode* where Morkdown acts as a renderer for the Markdown file you've provided. It'll continue to watch for changes to that file and re-render the content automatically. That way, you can use your favourite editor instead of the lame in-built textarea!
 
 ![Watch mode](http://js.vagg.org/github/morkdown_watchmode.png)
+*Morkdown in "watch mode"*
 
 ## Installing & Using
 
