@@ -8,6 +8,7 @@
       , "marked": "~0.2.5"
       , "async": "~0.1.22"
       , "posix-argv-parser": "~0.4.1"
+      , "delayed": "~0.0.0"
     }
   , "scripts": {
     }
