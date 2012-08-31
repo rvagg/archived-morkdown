@@ -1,6 +1,6 @@
 {
     "name": "morkdown"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "description": "A markdown editor build on Appjs & Node"
   , "main": "lib/main.js"
   , "dependencies": {
