@@ -38,3 +38,20 @@ body.watching #dst {
   margin-left: 0;
   left: 0.5em;
 }
+#hrefhover {
+  background: rgb(200, 200, 200);
+  border: rgb(150, 150, 150);
+  position: absolute;
+  bottom: 8px;
+  right: 23px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 9pt;
+  display: inline-block;
+  z-index: 1;
+  opacity: 1;
+  -webkit-transition: opacity ease 0.3s;
+}
+#hrefhover.hide {
+  opacity: 0;
+}
