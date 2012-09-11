@@ -1,6 +1,6 @@
 {
     "name": "morkdown"
-  , "version": "0.0.5"
+  , "version": "0.0.6"
   , "description": "A markdown editor build on Appjs & Node"
   , "main": "lib/main.js"
   , "dependencies": {
@@ -9,10 +9,14 @@
       , "async": "~0.1.22"
       , "posix-argv-parser": "~0.4.1"
       , "delayed": "~0.0.0"
+      , "pygmentize-bundled": "~0.0.0"
     }
   , "bin": {
         "morkdown": "./bin/morkdown"
     }
+  , "keywords": [
+        "markdown"
+    ]
   , "repository": {
         "type": "git"
       , "url": "https://github.com/rvagg/morkdown.git"
