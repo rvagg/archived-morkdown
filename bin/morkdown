@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var cp = require('child_process').spawn(
     'node'
-  , [ '--harmony', require('path').join(__dirname, '../lib/main.js') ].concat(process.argv.slice(2))
+  , [ '--harmony', require('path').join(__dirname, '../') ].concat(process.argv.slice(2))
 )
 
 cp.stdout.on('data', function (data) { process.stdout.write(data.toString()) })

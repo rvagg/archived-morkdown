@@ -3,7 +3,7 @@ var fs                = require('fs')
   , path              = require('path')
   , pap               = require("posix-argv-parser")
 
-  , Processor         = require('./processor')
+  , brucedown         = require('brucedown')
   , cumulativeDelayed = require('delayed').cumulativeDelayed
 
   , args              = pap.create()
@@ -11,7 +11,7 @@ var fs                = require('fs')
 
   , window
 
-  , currentProcessor  = null
+  , processing        = false
   , currentText       = null
 
   , $ = function (id) {
@@ -19,12 +19,12 @@ var fs                = require('fs')
     }
 
   , render = cumulativeDelayed(function (content) {
-      if (currentProcessor != null) return render(content)
+      if (processing) return render(content)
       if (content === currentText) return
 
-      currentProcessor = new Processor(currentText = content)
-      currentProcessor.process(function (err, html) {
-        currentProcessor = null
+      processing = true
+      brucedown(currentText = content, function (err, html) {
+        processing = false
         if (err) return console.log('ERR', err)
         $('dst').innerHTML = html
       })
@@ -47,12 +47,12 @@ var fs                = require('fs')
     }
 
   , start = function (watchFile) {
-      app.serveFilesFrom(path.join(__dirname, '../content'))
+      app.serveFilesFrom(path.join(__dirname, './content'))
 
       window = app.createWindow({
         width  : 800,
         height : 800,
-        icons  : path.join(__dirname,  '../content/icons')
+        icons  : path.join(__dirname,  './content/icons')
       })
 
       window.on('create', function(){
@@ -102,7 +102,7 @@ var fs                = require('fs')
           }
         })
         $hrefhover.addEventListener('webkitTransitionEnd', function () {
-          if (window.getComputedStyle($hrefhover).opacity == 0) {
+          if (window.getComputedStyle($hrefhover).opacity === 0) {
             $hrefhover.style.display = 'none'
               //console.log('display:',$hrefhover.style.display)
           }

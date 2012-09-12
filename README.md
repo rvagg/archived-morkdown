@@ -28,6 +28,17 @@ You'll need a python interpreter on your system, which should be fine for Linux 
 
 You can install from [npm](http://npmjs.org) with `npm install -g morkdown` (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown`** command and you're away!
 
+### Notes
+
+When installing you may get an error that looks something like this (depending on your platform):
+
+```
+Error installing appjs-linux-x64
+Please use `npm install appjs-linux-x64 and install the package manually
+```
+
+I'm not sure what this is but I'm sure the AppJS guys have it under control. You just need to run the `npm install` command suggested and it'll install the proper runtime needed. If you get an error about *"CEF location not found"* then it's likely that you haven't got the AppJS runtime properly installed.
+
 ## Contributing
 
 **YES PLEASE!** My needs are simple but I can see lots of potential for this project. AppJS lets you develop in JavaScript, HTML & CSS so the barriers to entry are fairly low.
