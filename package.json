@@ -1,13 +1,13 @@
 {
     "name": "morkdown"
-  , "version": "0.0.7"
+  , "version": "0.0.8"
   , "description": "A markdown editor build on Appjs & Node"
   , "main": "index.js"
   , "dependencies": {
         "appjs": "~0.0.19"
       , "posix-argv-parser": "~0.4.1"
       , "delayed": "~0.0.0"
-      , "brucedown": "~0.0.0"
+      , "brucedown": "~0.0.1"
     }
   , "bin": {
         "morkdown": "./bin/morkdown"
