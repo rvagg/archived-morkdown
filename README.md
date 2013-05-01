@@ -22,7 +22,7 @@ me(__dirname + '/README.md').listen(8000);
 With [npm](http://npmjs.org) do
 
 ```bash
-$ npm install -g me-editor
+$ npm install -g me
 ```
 
 ## License
