@@ -1,0 +1,39 @@
+html {
+  font : 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+code {
+  white-space: pre;
+}
+
+#input, #output {
+  position : absolute;
+  height : 100%;
+  padding-top : 20px;
+}
+
+#input {
+  left : 10%;
+  width : 38%;
+}
+
+#input textarea {
+  height : 100%;
+  width : 100%;
+  padding : 0;
+  border : 0;
+  font-family : monospace;
+}
+
+#input textarea:focus {
+  outline : 0;
+}
+
+#output {
+  left : 52%;
+  width : 45%;
+}
+
+#output img {
+  width : 100%;
+}

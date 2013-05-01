@@ -1,0 +1,28 @@
+{
+  "name" : "me-editor",
+  "description" : "Markdown editor",
+  "version" : "0.0.0",
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/juliangruber/me.git"
+  },
+  "homepage": "https://github.com/juliangruber/me",
+  "main" : "index.js",
+  "scripts" : {
+    "test" : "tap test/*.js"
+  },
+  "bin" : {
+    "me" : "bin/me.js"
+  },
+  "dependencies" : {},
+  "devDependencies" : {
+    "tap" : "*"
+  },
+  "keywords": ["markdown","editor","edit","browser","readme"],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "MIT"
+}
