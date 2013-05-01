@@ -1,6 +1,6 @@
 # Me
 
-Markdown editor.
+Markdown editor with live-preview and auto-save.
 
 ## Usage
 
