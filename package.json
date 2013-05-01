@@ -1,24 +1,40 @@
 {
-  "name" : "me-editor",
-  "description" : "Markdown editor",
-  "version" : "0.0.1",
-  "repository" : {
-    "type" : "git",
-    "url" : "git://github.com/juliangruber/me.git"
+  "name": "me-editor",
+  "description": "Markdown editor",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/me.git"
   },
   "homepage": "https://github.com/juliangruber/me",
-  "main" : "index.js",
-  "scripts" : {
-    "test" : "tap test/*.js"
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
   },
-  "bin" : {
-    "me" : "bin/me.js"
+  "bin": {
+    "me": "bin/me.js"
   },
-  "dependencies" : {},
-  "devDependencies" : {
-    "tap" : "*"
+  "dependencies": {
+    "debounce": "0.0.2",
+    "concat-stream": "~0.1.1",
+    "domready": "~0.2.11",
+    "marked": "~0.2.8",
+    "highlight.js": "~7.3.0",
+    "hyperquest": "~0.1.5",
+    "express": "~3.2.1",
+    "brfs": "0.0.4",
+    "browserify": "~2.13.2"
   },
-  "keywords": ["markdown","editor","edit","browser","readme"],
+  "devDependencies": {
+    "tap": "*"
+  },
+  "keywords": [
+    "markdown",
+    "editor",
+    "edit",
+    "browser",
+    "readme"
+  ],
   "author": {
     "name": "Julian Gruber",
     "email": "mail@juliangruber.com",
