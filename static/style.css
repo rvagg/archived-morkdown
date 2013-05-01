@@ -7,7 +7,6 @@ code {
 }
 
 #input, #output {
-  position : absolute;
   height : 100%;
   padding-top : 20px;
 }
@@ -15,6 +14,7 @@ code {
 #input {
   left : 10%;
   width : 38%;
+  position : fixed;
 }
 
 #input textarea {
@@ -30,6 +30,7 @@ code {
 }
 
 #output {
+  position : absolute;
   left : 52%;
   width : 45%;
 }
