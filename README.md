@@ -1,6 +1,6 @@
 # Me
 
-Markdown editor with live-preview and auto-save.
+Markdown editor with live-preview and auto-save as a chrome app.
 
 ## Usage
 
