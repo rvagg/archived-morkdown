@@ -1,40 +1,320 @@
 html {
-  font : 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-code {
-  white-space: pre;
+  font: 14px 'Helvetica Neue', Helvetica, arial, freesans, clean, sans-serif;
 }
 
 #input, #output {
   height : 100%;
-  padding-top : 20px;
 }
 
 #input {
-  left : 10%;
-  width : 38%;
-  position : fixed;
+  right : 50%;
+  padding-left : 20px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position : absolute;
 }
 
-#input textarea {
-  height : 100%;
-  width : 100%;
-  padding : 0;
-  border : 0;
-  font-family : monospace;
+#output {
+  position : absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left : 50%;
+  padding-right : 20px;
+  overflow: auto;
+}
+
+#output > div {
+  padding : 10px;
+  line-height: 1.6;
+  color: #333;
+}
+
+#input > textarea {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding : 10px;
+  background-color: #f5f5f5;
+  font-family : 'UbuntuMono', monospace;
+  font-size: 14px;
 }
 
 #input textarea:focus {
   outline : 0;
 }
 
-#output {
-  position : absolute;
-  left : 52%;
-  width : 45%;
+#output > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#output a, #output a:visited {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+#output a:hover {
+  text-decoration: underline;
+}
+
+#output p, #output blockquote, #output ul, #output ol, #output dl, #output table, #output pre {
+  margin: 15px 0;
+}
+
+  #output .markdown-body h1
+, #output .markdown-body h2
+, #output .markdown-body h3
+, #output .markdown-body h4
+, #output .markdown-body h5
+, #output .markdown-body h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+}
+
+#output h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+#output h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
 }
 
 #output img {
   max-width : 100%;
+}
+
+#output hr {
+  background: transparent url("/img/hr.png") repeat-x 0 0;
+  border: 0 none;
+  color: #ccc;
+  height: 4px;
+  padding: 0;
+}
+
+#output table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#output tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+#output td, #output th {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+#output th {
+  font-weight: bold;
+}
+
+#output blockquote {
+  border-left: 4px solid #ddd;
+  padding: 0 15px;
+  color: #777;
+}
+
+#output blockquote > :last-child, #output blockquote > :first-child {
+  margin-bottom: 0px;
+}
+
+pre, code {
+  font-family: 'UbuntuMono', monospace;
+  white-space: nowrap;
+  margin: 0 2px;
+  padding: 0px 5px;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  padding: 10px;
+  line-height: 150%;
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+
+pre code, pre tt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  border: none;
+}
+
+  .highlight .c
+, .highlight .cm
+, .highlight .cp
+, .highlight .c1 {
+    color:#999988;
+    font-style:italic;
+}
+
+.highlight .err {
+  color:#a61717;
+  background-color:#e3d2d2
+}
+
+  .highlight .o
+, .highlight .gs
+, .highlight .kc
+, .highlight .kd
+, .highlight .kn
+, .highlight .kp
+, .highlight .kr {
+    font-weight:bold
+}
+
+.highlight .cs {
+  color:#999999;
+  font-weight:bold;
+  font-style:italic
+}
+
+.highlight .gd {
+  color:#000000;
+  background-color:#ffdddd
+}
+
+.highlight .gd .x {
+  color:#000000;
+  background-color:#ffaaaa
+}
+
+.highlight .ge {
+  font-style:italic
+}
+
+  .highlight .gr
+, .highlight .gt {
+    color:#aa0000
+}
+
+  .highlight .gh
+, .highlight .bp {
+    color:#999999
+}
+
+.highlight .gi {
+  color:#000000;
+  background-color:#ddffdd
+}
+
+.highlight .gi .x {
+  color:#000000;
+  background-color:#aaffaa
+}
+
+.highlight .go {
+  color:#888888
+}
+
+  .highlight .gp
+, .highlight .nn {
+    color:#555555
+}
+
+
+.highlight .gu {
+  color:#800080;
+  font-weight:bold
+}
+
+
+.highlight .kt {
+  color:#445588;
+  font-weight:bold
+}
+
+  .highlight .m
+, .highlight .mf
+, .highlight .mh
+, .highlight .mi
+, .highlight .mo
+, .highlight .il {
+    color:#009999
+}
+
+  .highlight .s
+, .highlight .sb
+, .highlight .sc
+, .highlight .sd
+, .highlight .s2
+, .highlight .se
+, .highlight .sh
+, .highlight .si
+, .highlight .sx
+, .highlight .s1 {
+    color:#d14
+}
+
+.highlight .n {
+  color:#333333
+}
+
+  .highlight .na
+, .highlight .no
+, .highlight .nv
+, .highlight .vc
+, .highlight .vg
+, .highlight .vi
+, .highlight .nb {
+    color:#0086B3
+}
+
+.highlight .nc {
+  color:#445588;
+  font-weight:bold
+}
+
+.highlight .ni {
+  color:#800080
+}
+
+  .highlight .ne
+, .highlight .nf {
+    color:#990000;
+    font-weight:bold
+}
+
+.highlight .nt {
+  color:#000080
+}
+
+.highlight .ow {
+  font-weight:bold
+}
+
+.highlight .w {
+  color:#bbbbbb
+}
+
+.highlight .sr {
+  color:#009926
+}
+
+.highlight .ss {
+  color:#990073
+}
+
+.highlight .gc {
+  color:#999;
+  background-color:#EAF2F5
 }
