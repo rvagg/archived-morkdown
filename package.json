@@ -1,13 +1,19 @@
 {
     "name": "morkdown"
   , "version": "0.0.8"
-  , "description": "A markdown editor build on Appjs & Node"
+  , "description": "A markdown editor built on Chrome & Node"
   , "main": "index.js"
   , "dependencies": {
-        "appjs": "~0.0.19"
-      , "posix-argv-parser": "~0.4.1"
-      , "delayed": "~0.0.0"
-      , "brucedown": "~0.0.1"
+          "delayed": "~0.0.0"
+        , "concat-stream": "~0.1.1"
+        , "domready": "~0.2.11"
+        , "hyperquest": "~0.1.5"
+        , "brfs": "~0.0.4"
+        , "browserify": "~2.13.2"
+        , "brucedown": "~0.0.1"
+        , "after": "~0.7.0"
+        , "st": "~0.1.3"
+        , "ent": "~0.0.5"
     }
   , "bin": {
         "morkdown": "./bin/morkdown"
