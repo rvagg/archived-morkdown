@@ -1,48 +1,23 @@
 # Morkdown
-***A simple editor for Markdown***
 
-![WOW!!!](http://js.vagg.org/github/morkdown.png)
+***A beautifully simple editor for Markdown documents***
 
-Morkdown is primarily designed to render [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) (GFM), so it's ideal for your **README.md**.
+![WOW!!!](https://f.cloud.github.com/assets/495647/452413/a9bf510a-b2e5-11e2-8417-1d8d49b7a6f3.png)
 
-Morkdown is built on [AppJS](http://appjs.org/), an application framework for Node.js. Editing takes place in a two-pane window, your source Markdown on the left and the rendered HTML on the right. The styling is almost identical to Markdown rendered on GitHub. Markdown is parsed using [marked](https://github.com/chjj/marked), a JavaScript Markdown parser capable of parsing GFM while syntax highlighting is performed using the [Python Pygments](http://pygments.org/) library, used by GitHub.
+Morkdown is primarily designed to render [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) (GFM), so it's ideal for your **README.md**. It uses the same syntax highlighter as GitHub (the Python [Pygments](http://pygments.org/) library) and the styling is near identical to GitHub. Markdown content is parsed using [marked](https://github.com/chjj/marked), a JavaScript Markdown parser capable of parsing GFM.
 
-## Edit mode
+Morkdown is a **Google Chrome App**. The previous incarnation of Morkdown was built on [AppJS](http://appjs.org/), but that project has gone a little stale of late so thanks to [@juliangruber](http://github.com/juliangruber/)'s **[me](http://github.com/juliangruber/me/)** markdown editor I've resurrected Morkdown from the dead!
 
-If you run `morkdown` without any arguments you'll enter a simple *edit mode*. You'll have a panel on the left where you can type (or paste) your Markdown and it'll be rendered in a panel on the right. There is no file-load or save functionality here so copy and paste are your friends.
+![GFM you say?](https://f.cloud.github.com/assets/495647/452414/afb7b674-b2e5-11e2-85a5-da9b95f89d7e.png)
 
-## Watch mode
-
-If you run `morkdown --watch <file>` (also `-w <file>`) you'll enter a *watch mode* where Morkdown acts as a renderer for the Markdown file you've provided. It'll continue to watch for changes to that file and re-render the content automatically. That way, you can use your favourite editor instead of the lame in-built textarea!
-
-![Watch mode](http://js.vagg.org/github/morkdown_watchmode.png)
-*Morkdown in "watch mode"*
+Morkdown will **automatically save** your document as you edit it.
 
 ## Installing & Using
 
-AppJS *should* work on Linux, Mac OS X and Windows.
+You'll need Google Chrome of course, plus you'll need a python interpreter on your system to get the syntax highlighting working&mdash;which should be fine for Linux and Mac users. Getting it running on Windows might be a little tricky (but presumably not impossible!).
 
-**Mac OS X users need to be using the 32-bit version of Node unfortunately.** This is a Chromium limitation, you can apply pressure by starring [this ticket](http://code.google.com/p/chromium/issues/detail?id=18323).
-
-You'll need a python interpreter on your system, which should be fine for Linux and Mac users. Getting it running on Windows might be a little tricky (but presumably not impossible!).
-
-You can install from [npm](http://npmjs.org) with `npm install -g morkdown` (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown`** command and you're away!
-
-### Notes
-
-When installing you may get an error that looks something like this (depending on your platform):
-
-```
-Error installing appjs-linux-x64
-Please use `npm install appjs-linux-x64 and install the package manually
-```
-
-I'm not sure what this is but I'm sure the AppJS guys have it under control. You just need to run the `npm install` command suggested and it'll install the proper runtime needed. If you get an error about *"CEF location not found"* then it's likely that you haven't got the AppJS runtime properly installed.
-
-## Contributing
-
-**YES PLEASE!** My needs are simple but I can see lots of potential for this project. AppJS lets you develop in JavaScript, HTML & CSS so the barriers to entry are fairly low.
+You can install from [npm](http://npmjs.org) with `npm install -g morkdown` (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown <path to file.md>`** command and you're away!
 
 ## Licence & Copyright
 
-Morkdown is Copyright (c) 2012 Rod Vagg <@rvagg> and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.
+Morkdown is Copyright (c) 2013 Rod Vagg <@rvagg> and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.
