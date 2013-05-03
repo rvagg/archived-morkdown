@@ -1,5 +1,5 @@
 {
-    "predef": [ ]
+    "predef": [ "alert" ]
   , "bitwise": false
   , "camelcase": false
   , "curly": false
