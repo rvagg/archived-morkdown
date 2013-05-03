@@ -16,8 +16,10 @@ Morkdown will **automatically save** your document as you edit it.
 
 You'll need Google Chrome of course, plus you'll need a python interpreter on your system to get the syntax highlighting working&mdash;which should be fine for Linux and Mac users. Getting it running on Windows might be a little tricky (but presumably not impossible!).
 
-You can install from [npm](http://npmjs.org) with `npm install -g morkdown` (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown <path to file.md>`** command and you're away!
+You can install from [npm](http://npmjs.org), the Node.js package manager, with <b><code>npm install -g morkdown</code></b> (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown <path to file.md>`** command and you're away!
 
 ## Licence & Copyright
 
 Morkdown is Copyright (c) 2013 Rod Vagg <@rvagg> and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.
+
+Morkdown contains remnants of **[me](http://github.com/juliangruber/me/)**, which is Copyright (c) 2013 Julian Gruber <julian@juliangruber.com> and licenced under the MIT licence.
