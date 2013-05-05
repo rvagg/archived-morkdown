@@ -28,8 +28,15 @@ if (!file) {
 
 me(file, port).listen(port)
 
-if (os.platform() == 'darwin')
-  bin = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+if (os.platform() == 'darwin') {
+  if (fs.existsSync('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')) {
+    bin = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+  } else if(fs.existsSync('/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary')) {
+      bin = '/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
+  } else {
+    throw('chrome or canary were not found');
+  }
+}
 
 if (process.env.HOME)
   args.push('--user-data-dir=' + path.join(process.env.HOME, '.md'))
