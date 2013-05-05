@@ -1,6 +1,6 @@
 {
     "name"         : "morkdown"
-  , "version"      : "1.0.1"
+  , "version"      : "1.0.2"
   , "description"  : "A markdown editor built on Chrome & Node"
   , "main"         : "lib/server.js"
   , "dependencies" : {
