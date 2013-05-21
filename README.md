@@ -2,15 +2,44 @@
 
 ***A beautifully simple editor for Markdown documents***
 
-![WOW!!!](https://f.cloud.github.com/assets/495647/452413/a9bf510a-b2e5-11e2-8417-1d8d49b7a6f3.png)
+Morkdown is primarily designed to render [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) (GFM), so it's ideal for your **README.md**. When rendering the Markdown, it uses the same syntax highlighter as GitHub (the Python [Pygments](http://pygments.org/) library) and the styling is near identical to GitHub. Markdown content is parsed using [marked](https://github.com/chjj/marked), a JavaScript Markdown parser capable of parsing GFM.
 
-Morkdown is primarily designed to render [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) (GFM), so it's ideal for your **README.md**. It uses the same syntax highlighter as GitHub (the Python [Pygments](http://pygments.org/) library) and the styling is near identical to GitHub. Markdown content is parsed using [marked](https://github.com/chjj/marked), a JavaScript Markdown parser capable of parsing GFM.
+![WOW!!!](http://r.va.gg/morkdown/screenshot-1.png)
 
-Morkdown is a **Google Chrome App**. The previous incarnation of Morkdown was built on [AppJS](http://appjs.org/), but that project has gone a little stale of late so thanks to [@juliangruber](http://github.com/juliangruber/)'s **[me](http://github.com/juliangruber/me/)** markdown editor I've resurrected Morkdown from the dead!
+*Morkdown editing the [LevelUP](https://github.com/rvagg/node-levelup) README*
 
-![GFM you say?](https://f.cloud.github.com/assets/495647/452414/afb7b674-b2e5-11e2-85a5-da9b95f89d7e.png)
+Morkdown is a **Google Chrome App** coupled to a Node server and uses [CodeMirror](http://codemirror.net) for the editor panel.
+
+![GFM you say?](http://r.va.gg/morkdown/screenshot-2.png)
+
+*Morkdown editing the [LevelUP](https://github.com/rvagg/node-levelup) README with the "monokai" theme*
 
 Morkdown will **automatically save** your document as you edit it.
+
+## Themes
+
+Morkdown is packaged with the standard CodeMirror themes, you can switch to a different theme with the `--theme <themename>` commandline argument:
+
+  * ambiance
+  * ambiance-mobile
+  * blackboard
+  * cobalt
+  * eclipse
+  * elegant
+  * erlang-dark
+  * lesser-dark
+  * midnight
+  * monokai
+  * neat
+  * night
+  * rubyblue
+  * solarized
+  * twilight
+  * vibrant-ink
+  * xq-dark
+  * xq-light
+
+The default theme is **neat** but you can set your own default theme by saving a JSON file in your home directory named *.morkdownrc* with the following content: `{ "theme": "themename" }`. (My theme of choice is *monokai*).
 
 ## Installing & Using
 
@@ -22,4 +51,4 @@ You can install from [npm](http://npmjs.org), the Node.js package manager, with 
 
 Morkdown is Copyright (c) 2013 Rod Vagg <@rvagg> and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.
 
-Morkdown contains remnants of **[me](http://github.com/juliangruber/me/)**, which is Copyright (c) 2013 Julian Gruber <julian@juliangruber.com> and licenced under the MIT licence.
+Morkdown contains remnants of **[me](http://github.com/juliangruber/me/)**, which is Copyright (c) 2013 Julian Gruber <julian@juliangruber.com> and licenced under the MIT licence.rubyblue.css
