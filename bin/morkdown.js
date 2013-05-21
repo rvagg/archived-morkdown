@@ -5,8 +5,20 @@ var me     = require('..')
   , os     = require('os')
   , fs     = require('fs')
   , path   = require('path')
-  , file   = process.argv[2]
-  , port   = 3456
+  , argv = (function () {
+      var argv = require('optimist').argv
+        , def, p
+      try {
+        def = JSON.parse(fs.readFileSync(path.join(process.env.HOME, '.morkdownrc')))
+        for (p in argv)
+          def[p] = argv[p]
+        argv = def
+      } catch (e) {}
+      return argv
+    }())
+  , file   = argv._[0]
+  , port   = 2000 + Math.round(Math.random() * 5000)
+  , theme  = argv.theme
 
   , bin    = 'google-chrome'
   , args   = [
@@ -26,7 +38,7 @@ if (!file) {
   process.exit(-1)
 }
 
-me(file, port).listen(port)
+me(file, theme).listen(port)
 
 if (os.platform() == 'darwin') {
   if (fs.existsSync('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')) {

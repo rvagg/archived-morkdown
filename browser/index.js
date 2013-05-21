@@ -3,9 +3,12 @@ var ready             = require('domready')
   , cumulativeDelayed = require('delayed').cumulativeDelayed
   , concat            = require('concat-stream')
 
-  , $input
+  , $codeMirror
   , $output
   , inTransit         = false
+  , lastText
+
+require('./codemirror')
 
 var handleResponse = function (err, res) {
   inTransit = false
@@ -34,20 +37,36 @@ var transmit = cumulativeDelayed(function () {
   if (inTransit)
     return
 
+  var content = $codeMirror.getValue()
+    , req
+
+  if (lastText == content)
+    return
+
+  lastText = content
+
   inTransit = true
-  var req = request.post('/content')
+  req = request.post('/content')
   req.setHeader('Content-Type', 'application/json')
   req.pipe(concat(handleResponse))
   req.write(JSON.stringify({
     ts : Date.now(),
-    content : $input.value
+    content : content
   }))
   req.end()
 }, 0.3)
 
 ready(function () {
-  $input = document.querySelector('#input > textarea')
+  var $input = document.querySelector('#input > textarea')
   $output = document.querySelector('#output > div')
-
-  $input.addEventListener('keyup', transmit)
+  $codeMirror = CodeMirror.fromTextArea($input, {
+      mode         : 'gfm'
+    , lineNumbers  : true
+    , theme        : document.body.getAttribute('data-theme') || 'neat'
+    , lineWrapping : true
+    , tabSize      : 2
+    , autofocus    : true
+  });
+  lastText = $codeMirror.getValue()
+  $codeMirror.on('change', transmit)
 })
