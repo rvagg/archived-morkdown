@@ -10,14 +10,8 @@ var ready             = require('domready')
 
 require('./codemirror')
 
-var handleResponse = function (err, res) {
+var handleResponse = function (res) {
   inTransit = false
-
-  if (!err && !res)
-    return alert('server down, server down, panic!!')
-
-  if (err)
-    return alert(err)
 
   if (res == 'stale')
     return // ignore
