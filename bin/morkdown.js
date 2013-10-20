@@ -26,12 +26,14 @@ var me     = require('..')
       , '--disk-cache-size 0'
       , '--no-proxy-server'
     ]
-  , isFile = file && fs.existsSync(file) && fs.statSync(file).isFile()
 
-if (file && !isFile) {
-  console.error('File [' + file + '] does not exist or is not a regular file')
+if (file && fs.existsSync(file) && !fs.statSync(file).isFile()) {
+  console.error('File [' + file + '] is not a regular file')
   file = null
 }
+
+if (file && !fs.existsSync(file))
+  fs.writeFileSync(file, '', 'utf8')
 
 if (!file) {
   console.error('Usage: morkdown <path to file.md>')
@@ -43,8 +45,8 @@ me(file, theme).listen(port)
 if (os.platform() == 'darwin') {
   if (fs.existsSync('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')) {
     bin = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-  } else if(fs.existsSync('/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary')) {
-      bin = '/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
+  } else if(fs.existsSync('/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary')) {
+      bin = '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
   } else {
     throw('chrome or canary were not found');
   }
