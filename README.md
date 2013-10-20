@@ -2,6 +2,8 @@
 
 ***A beautifully simple editor for Markdown documents***
 
+[![NPM](https://nodei.co/npm/morkdown.png?compact=true)](https://nodei.co/npm/morkdown/)
+
 Morkdown is primarily designed to render [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) (GFM), so it's ideal for your **README.md**. When rendering the Markdown, it uses the same syntax highlighter as GitHub (the Python [Pygments](http://pygments.org/) library) and the styling is near identical to GitHub. Markdown content is parsed using [marked](https://github.com/chjj/marked), a JavaScript Markdown parser capable of parsing GFM.
 
 ![WOW!!!](http://r.va.gg/morkdown/screenshot-1.png)
