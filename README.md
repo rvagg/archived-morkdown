@@ -49,6 +49,13 @@ You'll need Google Chrome of course, plus you'll need a python interpreter on yo
 
 You can install from [npm](http://npmjs.org), the Node.js package manager, with <b><code>npm install -g morkdown</code></b> (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown <path to file.md>`** command and you're away!
 
+## Contributors
+
+**morkdown** is brought to you by the following hackers:
+
+ * [Rod Vagg](https://github.com/rvagg)
+ * [Ian Duffy](https://github.com/imduffy15)
+
 ## Licence & Copyright
 
 Morkdown is Copyright (c) 2013 Rod Vagg <@rvagg> and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.
