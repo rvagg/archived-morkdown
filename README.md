@@ -57,6 +57,7 @@ If you want to use an editor of your choice, launch morkdown with a *watch flag*
 
  * [Rod Vagg](https://github.com/rvagg)
  * [Ian Duffy](https://github.com/imduffy15)
+ * [ralphtheninja](https://github.com/ralphtheninja)
 
 ## Licence & Copyright
 

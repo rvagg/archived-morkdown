@@ -6,14 +6,14 @@
   , "dependencies" : {
           "delayed"       : "~0.0.0"
         , "concat-stream" : "~1.0.1"
-        , "domready"      : "~0.2.11"
+        , "domready"      : "~0.2.13"
         , "hyperquest"    : "~0.1.8"
-        , "browserify"    : "~2.34.3"
-        , "brucedown"     : "~0.1.0"
+        , "browserify"    : "~2.35.1"
+        , "brucedown"     : "~0.1.1"
         , "after"         : "~0.8.1"
         , "st"            : "~0.2.2"
         , "ent"           : "~0.1.0"
-        , "codemirror"    : "~3.18.0"
+        , "codemirror"    : "~3.19.0"
         , "optimist"      : "~0.6.0"
         , "bl"            : "~0.5.0"
         , "shoe"          : "~0.0.15"
@@ -32,6 +32,8 @@
   , "preferGlobal" : true
   , "authors"      : [
         "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)"
+      , "Ian Duffy <ian@ianduffy.ie> (https://github.com/imduffy15)"
+      , "ralphtheninja <ralphtheninja@riseup.net> (https://github.com/ralphtheninja)"
     ]
   , "scripts"      : {
         "install" : "mkdir -p static/codemirror/; cp -a node_modules/codemirror/lib/codemirror.css node_modules/codemirror/theme/ static/codemirror/"
