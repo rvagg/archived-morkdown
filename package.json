@@ -16,6 +16,8 @@
         , "codemirror"    : "~3.18.0"
         , "optimist"      : "~0.6.0"
         , "bl"            : "~0.5.0"
+        , "shoe"          : "~0.0.15"
+        , "through"       : "~2.3.4"
       }
   , "bin"          : {
         "morkdown"        : "./bin/morkdown.js"

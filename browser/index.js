@@ -2,6 +2,8 @@ var ready             = require('domready')
   , request           = require('hyperquest')
   , cumulativeDelayed = require('delayed').cumulativeDelayed
   , concat            = require('concat-stream')
+  , shoe              = require('shoe')
+  , through           = require('through')
 
   , $codeMirror
   , $output
@@ -51,16 +53,29 @@ var transmit = cumulativeDelayed(function () {
 }, 0.3)
 
 ready(function () {
-  var $input = document.querySelector('#input > textarea')
+  var $input = document.querySelector('#input')
+    , $textarea
+    , stream
+
   $output = document.querySelector('#output > div')
-  $codeMirror = CodeMirror.fromTextArea($input, {
+
+  if ($input.style && $input.style.display && $input.style.display == 'none') {
+    // pushing changes to client when file changed locally
+    stream = shoe('/output')
+    stream.pipe(through(handleResponse))
+  }
+  else {
+    // input from browser to server (save file) and result back to client
+    $textarea = document.querySelector('#input > textarea')
+    $codeMirror = CodeMirror.fromTextArea($textarea, {
       mode         : 'gfm'
-    , lineNumbers  : true
-    , theme        : document.body.getAttribute('data-theme') || 'neat'
-    , lineWrapping : true
-    , tabSize      : 2
-    , autofocus    : true
-  });
-  lastText = $codeMirror.getValue()
-  $codeMirror.on('change', transmit)
+      , lineNumbers  : true
+      , theme        : document.body.getAttribute('data-theme') || 'neat'
+      , lineWrapping : true
+      , tabSize      : 2
+      , autofocus    : true
+    });
+    lastText = $codeMirror.getValue()
+    $codeMirror.on('change', transmit)
+  }
 })

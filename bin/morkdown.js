@@ -16,7 +16,8 @@ var me     = require('..')
       } catch (e) {}
       return argv
     }())
-  , file   = argv._[0]
+  , watching = argv.w
+  , file   = watching ? argv.w : argv._[0]
   , port   = 2000 + Math.round(Math.random() * 5000)
   , theme  = argv.theme
 
@@ -40,7 +41,7 @@ if (!file) {
   process.exit(-1)
 }
 
-me(file, theme).listen(port)
+me(file, theme, watching).listen(port)
 
 if (os.platform() == 'darwin') {
   if (fs.existsSync('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')) {

@@ -49,6 +49,8 @@ You'll need Google Chrome of course, plus you'll need a python interpreter on yo
 
 You can install from [npm](http://npmjs.org), the Node.js package manager, with <b><code>npm install -g morkdown</code></b> (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown <path to file.md>`** command and you're away!
 
+If you want to use an editor of your choice, launch morkdown with a *watch flag*, e.g. **`morkdown -w <path to file.md>`** and morkdown will re-render the output in the browser when the file is saved locally.
+
 ## Contributors
 
 **morkdown** is brought to you by the following hackers:
