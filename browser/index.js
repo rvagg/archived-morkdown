@@ -4,6 +4,7 @@ var ready             = require('domready')
   , concat            = require('concat-stream')
   , shoe              = require('shoe')
   , through           = require('through')
+  , become            = require('become')
 
   , $codeMirror
   , $output
@@ -24,7 +25,7 @@ var handleResponse = function (res) {
     return alert(res.error)
 
   if (res.content)
-    $output.innerHTML = res.content
+    become($output, res.content, {inner: true})
   else
     alert('no content returned from server')
 }
