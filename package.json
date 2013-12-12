@@ -1,43 +1,43 @@
 {
-    "name"         : "morkdown"
-  , "version"      : "2.2.0"
-  , "description"  : "A markdown editor built on Chrome & Node"
-  , "main"         : "lib/server.js"
-  , "dependencies" : {
-          "delayed"       : "~0.0.0"
-        , "concat-stream" : "~1.0.1"
-        , "domready"      : "~0.2.13"
-        , "hyperquest"    : "~0.1.8"
-        , "browserify"    : "~2.35.1"
-        , "brucedown"     : "~0.1.1"
-        , "after"         : "~0.8.1"
-        , "st"            : "~0.2.2"
-        , "ent"           : "~0.1.0"
-        , "codemirror"    : "~3.19.0"
-        , "optimist"      : "~0.6.0"
-        , "bl"            : "~0.5.0"
-        , "shoe"          : "~0.0.15"
-        , "through"       : "~2.3.4"
-        , "become"        : "~1.1.0"
-      }
-  , "bin"          : {
-        "morkdown"        : "./bin/morkdown.js"
-    }
-  , "keywords"     : [
-        "markdown"
-    ]
-  , "repository"   : {
-        "type"            : "git"
-      , "url"             : "https://github.com/rvagg/morkdown.git"
-    }
-  , "preferGlobal" : true
-  , "authors"      : [
-        "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)"
-      , "Ian Duffy <ian@ianduffy.ie> (https://github.com/imduffy15)"
-      , "ralphtheninja <ralphtheninja@riseup.net> (https://github.com/ralphtheninja)"
-    ]
-  , "scripts"      : {
-        "install" : "mkdir -p static/codemirror/; cp -a node_modules/codemirror/lib/codemirror.css node_modules/codemirror/theme/ static/codemirror/"
-    }
-  , "license"      : "MIT"
+  "name": "morkdown",
+  "version": "2.2.1",
+  "description": "A markdown editor built on Chrome & Node",
+  "main": "lib/server.js",
+  "dependencies": {
+    "delayed": "~0.0.0",
+    "concat-stream": "~1.0.1",
+    "domready": "~0.2.13",
+    "hyperquest": "~0.1.8",
+    "browserify": "~2.35.1",
+    "brucedown": "~0.1.1",
+    "after": "~0.8.1",
+    "st": "~0.2.2",
+    "ent": "~0.1.0",
+    "codemirror": "~3.19.0",
+    "optimist": "~0.6.0",
+    "bl": "~0.5.0",
+    "shoe": "~0.0.15",
+    "through": "~2.3.4",
+    "become": "~1.1.0"
+  },
+  "bin": {
+    "morkdown": "./bin/morkdown.js"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rvagg/morkdown.git"
+  },
+  "preferGlobal": true,
+  "authors": [
+    "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)",
+    "Ian Duffy <ian@ianduffy.ie> (https://github.com/imduffy15)",
+    "ralphtheninja <ralphtheninja@riseup.net> (https://github.com/ralphtheninja)"
+  ],
+  "scripts": {
+    "install": "mkdir -p static/codemirror/; cp -a node_modules/codemirror/lib/codemirror.css node_modules/codemirror/theme/ static/codemirror/"
+  },
+  "license": "MIT"
 }
