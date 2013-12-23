@@ -24,10 +24,7 @@ var handleResponse = function (res) {
   if (res.error)
     return alert(res.error)
 
-  if (res.content)
-    become($output, res.content, {inner: true})
-  else
-    alert('no content returned from server')
+  become($output, res.content ? res.content : '', {inner: true})
 }
 
 var transmit = cumulativeDelayed(function () {
