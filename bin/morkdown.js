@@ -47,7 +47,9 @@ if (os.platform() == 'darwin') {
   if (fs.existsSync('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')) {
     bin = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
   } else if(fs.existsSync('/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary')) {
-      bin = '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
+    bin = '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
+  } else if (fs.existsSync('/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app/Contents/MacOS/Google Chrome')) {
+    bin = '/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app/Contents/MacOS/Google Chrome'
   } else {
     throw('chrome or canary were not found');
   }
