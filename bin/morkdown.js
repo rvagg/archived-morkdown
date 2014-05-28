@@ -27,6 +27,10 @@ var me     = require('..')
       , '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
       , '/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app/Contents/MacOS/Google Chrome'
     ]
+  , linuxBin = [
+        '/usr/bin/google-chrome'
+      , '/usr/bin/chromium-browser'
+    ]
   , args   = [
         '--app=http://localhost:' + port
       , '--disk-cache-size 0'
@@ -55,6 +59,17 @@ if (os.platform() == 'darwin') {
 
   if (!bin)
     throw(new Error('Chrome or Canary were not found'))
+}
+
+if (os.platform() == 'linux') {
+  bin = linuxBin.reduce(function (p, c) {
+    if (p)
+      return p
+    return fs.existsSync(c) && c
+  }, null)
+
+  if (!bin)
+    throw(new Error('Chrome or Chromium were not found'))
 }
 
 me(file, theme, watching).listen(port)
