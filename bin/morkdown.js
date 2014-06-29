@@ -18,7 +18,7 @@ var me     = require('..')
     }())
   , watching = argv.w
   , file   = watching ? argv.w : argv._[0]
-  , port   = 2000 + Math.round(Math.random() * 5000)
+  , port   = argv.port || 2000 + Math.round(Math.random() * 5000)
   , theme  = argv.theme
 
   , bin    = 'google-chrome'
