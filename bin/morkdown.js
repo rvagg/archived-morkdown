@@ -26,6 +26,7 @@ var me     = require('..')
         '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
       , '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary'
       , '/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app/Contents/MacOS/Google Chrome'
+      , '/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
     ]
   , linuxBin = [
         '/usr/bin/google-chrome'
