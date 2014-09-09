@@ -31,6 +31,7 @@ var me     = require('..')
   , linuxBin = [
         '/usr/bin/google-chrome'
       , '/usr/bin/chromium-browser'
+      , '/usr/bin/chromium'
     ]
   , args   = [
         '--app=http://localhost:' + port
