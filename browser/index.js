@@ -1,10 +1,10 @@
-var ready             = require('domready')
-  , request           = require('hyperquest')
-  , cumulativeDelayed = require('delayed').cumulativeDelayed
-  , concat            = require('concat-stream')
-  , shoe              = require('shoe')
-  , through           = require('through')
-  , become            = require('become')
+var ready    = require('domready')
+  , request  = require('hyperquest')
+  , debounce = require('delayed').debounce
+  , concat   = require('concat-stream')
+  , shoe     = require('shoe')
+  , through  = require('through')
+  , become   = require('become')
 
   , $codeMirror
   , $output
@@ -13,7 +13,11 @@ var ready             = require('domready')
 
 require('./codemirror')
 
-var handleResponse = function (res) {
+
+var transmitDelayed = debounce(transmit, 300)
+
+
+function handleResponse (res) {
   inTransit = false
 
   if (res == 'stale')
@@ -27,7 +31,8 @@ var handleResponse = function (res) {
   become($output, res.content ? res.content : '', {inner: true})
 }
 
-var transmit = cumulativeDelayed(function () {
+
+function transmit () {
   if (inTransit)
     return
 
@@ -40,7 +45,8 @@ var transmit = cumulativeDelayed(function () {
   lastText = content
 
   inTransit = true
-  req = request.post('/content')
+
+  req = request.post(window.location.href + 'content')
   req.setHeader('Content-Type', 'application/json')
   req.pipe(concat(handleResponse))
   req.write(JSON.stringify({
@@ -48,9 +54,10 @@ var transmit = cumulativeDelayed(function () {
     content : content
   }))
   req.end()
-}, 0.3)
+}
 
-ready(function () {
+
+function onReady () {
   var $input = document.querySelector('#input')
     , $textarea
     , stream
@@ -74,6 +81,9 @@ ready(function () {
       , autofocus    : true
     });
     lastText = $codeMirror.getValue()
-    $codeMirror.on('change', transmit)
+    $codeMirror.on('change', transmitDelayed)
   }
-})
+}
+
+
+ready(onReady)
