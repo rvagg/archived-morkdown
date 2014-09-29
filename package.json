@@ -8,7 +8,7 @@
     "become": "~1.4.0",
     "bl": "~0.9.1",
     "browserify": "~5.11.1",
-    "brucedown": "~1.0.2",
+    "brucedown": "~1.0.3",
     "codemirror": "~4.5.0",
     "concat-stream": "~1.4.6",
     "delayed": "~1.0.1",
