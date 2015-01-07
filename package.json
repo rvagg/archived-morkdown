@@ -37,7 +37,7 @@
     "ralphtheninja <ralphtheninja@riseup.net> (https://github.com/ralphtheninja)"
   ],
   "scripts": {
-    "install": "mkdir -p static/codemirror/; cp -a node_modules/codemirror/lib/codemirror.css node_modules/codemirror/theme/ static/codemirror/"
+    "install": "mkdir -p static/codemirror/; cp node_modules/codemirror/lib/codemirror.css static/codemirror/ && cp -a node_modules/codemirror/theme/ static/codemirror/theme/"
   },
   "license": "MIT"
 }
