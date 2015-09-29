@@ -73,7 +73,7 @@ if (os.platform() == 'linux') {
     throw(new Error('Chrome or Chromium were not found'))
 }
 
-me(file, theme, watching).listen({ port: 0, host: 'localhost' }, function (err) {
+me(file, theme, watching).listen(0, 'localhost', function (err) {
   if (err)
     throw err
 
