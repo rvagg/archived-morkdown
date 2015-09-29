@@ -18,7 +18,6 @@ var me     = require('..')
     }())
   , watching = argv.w
   , file   = watching ? argv.w : argv._[0]
-  , port   = argv.port || 2000 + Math.round(Math.random() * 5000)
   , theme  = argv.theme
 
   , bin    = 'google-chrome'
@@ -34,7 +33,7 @@ var me     = require('..')
       , '/usr/bin/chromium'
     ]
   , args   = [
-        '--app=http://localhost:' + port
+        null
       , '--disk-cache-size 0'
       , '--no-proxy-server'
     ]
@@ -74,11 +73,17 @@ if (os.platform() == 'linux') {
     throw(new Error('Chrome or Chromium were not found'))
 }
 
-me(file, theme, watching).listen(port)
+me(file, theme, watching).listen({ port: 0, host: 'localhost' }, function (err) {
+  if (err)
+    throw err
 
-if (process.env.HOME)
-  args.push('--user-data-dir=' + path.join(process.env.HOME, '.md'))
+  // put the address on the end of the first argument, the URL
+  args[0] = '--app=http://' + this.address().address + ':' + String(this.address().port)
 
-spawn(bin, args)
-  .on('exit', process.exit.bind(process, 0))
-  .stderr.pipe(process.stderr)
+  if (process.env.HOME)
+    args.push('--user-data-dir=' + path.join(process.env.HOME, '.md'))
+
+  spawn(bin, args)
+    .on('exit', process.exit.bind(process, 0))
+    .stderr.pipe(process.stderr)
+})
