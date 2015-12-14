@@ -4,7 +4,7 @@
 
 [![NPM](https://nodei.co/npm/morkdown.png?compact=true)](https://nodei.co/npm/morkdown/)
 
-Morkdown is primarily designed to render [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) (GFM), so it's ideal for your **README.md**. When rendering the Markdown, it uses the same syntax highlighter as GitHub (the Python [Pygments](http://pygments.org/) library) and the styling is near identical to GitHub. Markdown content is parsed using [brucedown](https://github.com/rvagg/node-brucedown/), a JavaScript Markdown parser capable of parsing GFM.
+Morkdown is primarily designed to render [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) (GFM), so it's ideal for your **README.md**. When rendering the Markdown, it uses the same syntax highlighter as GitHub (the Python [Pygments](http://pygments.org/) library) and the styling is near identical to GitHub. Markdown content is parsed using [marked][marked](https://github.com/chjj/marked)(via [brucedown](https://github.com/rvagg/node-brucedown/)), a JavaScript Markdown parser capable of parsing GFM.
 
 ![WOW!!!](https://github.com/rvagg/morkdown/blob/gh-pages/screenshot-1.png)
 
@@ -47,7 +47,7 @@ The default theme is **neat** but you can set your own default theme by saving a
 
 You'll need Google Chrome of course, plus you'll need a python interpreter on your system to get the syntax highlighting working&mdash;which should be fine for Linux and Mac users. Getting it running on Windows might be a little tricky (but presumably not impossible!).
 
-You can install from [npm](http://npmjs.org), the Node.js package manager, with **`npm install -g morkdown`** (you may need to `sudo` that depending on your Node.js setup). Once installed you can simply run the **`morkdown <path to file.md>`** command and you're away!
+You can install from [npm](http://npmjs.org), the Node.js package manager, with **`npm install -g morkdown`** (you may need to `sudo` that depending on your setup). Once installed you can simply run the **`morkdown <path to file.md>`** command and you're away!
 
 If you want to use an editor of your choice, launch morkdown with a *watch flag*, e.g. **`morkdown -w <path to file.md>`** and morkdown will re-render the output in the browser when the file is saved locally.
 
